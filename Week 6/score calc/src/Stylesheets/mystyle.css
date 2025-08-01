@@ -1,0 +1,28 @@
+.heading {
+  color: brown;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.name {
+  color: blueviolet;
+}
+
+.school {
+  color: red;
+}
+
+.total {
+  color: brown;
+}
+
+.score {
+  color: green;
+}
