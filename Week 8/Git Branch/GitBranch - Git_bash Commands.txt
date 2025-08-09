@@ -1,0 +1,106 @@
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~
+$ git init GitProject
+Initialized empty Git repository in C:/Users/ARUN KUMAR/GitProject/.git/
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~
+$ cd GitProject
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ echo "Welcome to version Control" > welcome.txt
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        welcome.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git add welcome.txt
+warning: in the working copy of 'welcome.txt', LF will be replaced by CRLF the next time Git touches it
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git commit -m "Initial commit with welcome file"
+[master (root-commit) 6ec754f] Initial commit with welcome file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git branch GitNewBranch
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git branch -a
+  GitNewBranch
+* master
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git checkout GitnewBranch
+Switched to branch 'GitnewBranch'
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (GitnewBranch)
+$ echo "This is a new feature." > feature.txt
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (GitnewBranch)
+$ git add feature.txt
+warning: in the working copy of 'feature.txt', LF will be replaced by CRLF the next time Git touches it
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (GitnewBranch)
+$ git commit -m "Add feature file"
+[GitnewBranch 699b16b] Add feature file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (GitnewBranch)
+$ git status
+On branch GitnewBranch
+nothing to commit, working tree clean
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (GitnewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git diff GitNewBranch
+diff --git a/feature.txt b/feature.txt
+deleted file mode 100644
+index 31b9497..0000000
+--- a/feature.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is a new feature.
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git difftoll GitNewBranch
+git: 'difftoll' is not a git command. See 'git --help'.
+
+The most similar command is
+        difftool
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git merge GitNewBranch
+Updating 6ec754f..699b16b
+Fast-forward
+ feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git log --oneline --graph --decorate
+* 699b16b (HEAD -> master, GitnewBranch) Add feature file
+* 6ec754f Initial commit with welcome file
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was 699b16b).
+
+ARUN KUMAR@LAPTOP-AQA7O2VT MINGW64 ~/GitProject (master)
